@@ -37,25 +37,6 @@ class _MyListState extends State<MyList> {
     for (var i = 1 ;i<=10;i++){
       data.add(Text("data $i"));
     }
-
-    /*
-    ประกาศไว้ก่อน Return
-    List<Widget> data = [];
-    data.add(Text(
-      "Data 1",
-      style: TextStyle(fontSize: 18, color: Colors.blueAccent),
-    ));
-    data.add(Text("Data 2"));
-    data.add(Text("number is $number"));
-    */
-    
-    /*
-    ใส่แบบนี้ใน children: ก็ได้เหมือนกัน
-      // [
-      //   Text("Data 1"),
-      //   Text("Data 2")
-      // ],
-    */
     //Create Array Text End
     //Return UI Start
     return Scaffold(

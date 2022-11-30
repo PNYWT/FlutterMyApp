@@ -1,0 +1,39 @@
+VS Code
+1. Ctrl+Shift+p
+2. Fultter New Project
+
+ชื่อ Folder App ห้ามมีวรรค
+
+เปลี่ยนชื่อใน android -> app -> src -> main -> AndroidMainfest.xml -> android:label
+เปลี่ยน Icon App 
+	- ลง Package flutter launcher icon
+	- copy dependencies ไปไว้ใน pubspec.yaml
+	- สร้าง Folder ไว้เก็บภาพ icon
+	- เรียกใช้คำสั่ง flutter_icons:
+  		android: true
+  		image_path: "nameFolder/nameimg.png"
+
+โหลด Package, Library
+ตั้งค่าที่ pubspec.yaml
+
+void main() ใช้ runApp(Class StatelessWidget);
+
+StatelessWidget
+	- การแสดงผลแบบคงที่ คล้ายๆ NavigationController ที่สร้างไว้ใช้ Class เดียวใช้ได้ทั้งแอพ
+StatefulWidget
+	- Func นั้นแหละ เปลี่ยนแปลงค่าได้ กดแล้วนับเลขอะไรประมาณนั้น
+การสร้างนั้นพิมแค่ State ก็จะมีขึ้นมาให้เลือกเลย
+
+appBar คือ NavigationBar ใช้คำสั่ง Title
+body-child คือส่วนของ Content
+floatingActionButton คือ IBACTION ใน Swift
+
+เริ่มเนื้อหา
+การสร้าง Text ดูในไฟล์ count_number
+การสร้าง Func และ Button Action ดูในไฟล์ count_number_and_func
+
+Listview Widget คือ tableView
+	List คือ โครงสร้างข้อมูลที่จัดการเกี่ยวกับกลุ่มข้อมูล ดูในไฟล์ mylistview
+	Listview ใช้ในกรณีที่แสดงรายการ 4-10 รายการ
+	Listview.builder ใช้แสดงรายการมากกว่า 10 รายการ
+	ListTile กำหนดรายละเอียดต่างๆ ของ List เช่น title, selectionOfRow
