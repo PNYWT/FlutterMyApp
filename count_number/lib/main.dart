@@ -14,7 +14,38 @@ void main() {
 //StatelessWidget can't change value
 //Scaffold ใช้กำหนดตำแหน่ง Widget เหมือน Auto Layout ใน Xcode
 //TextStyle กำหนด Font และ Color
-/* MARK: Column Label
+
+
+//Class HomePage
+class TestStatelessWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "My TestStatelessWidget",
+      home: CountNumber(),
+      theme: ThemeData(primarySwatch: Colors.red),
+    );
+  }
+}
+
+//Class UI Count number
+class CountNumber extends StatefulWidget {
+  const CountNumber({super.key});
+
+  @override
+  State<CountNumber> createState() => _CountNumberState();
+}
+
+class _CountNumberState extends State<CountNumber> {
+  int number = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("First App"),
+      ),
+      /* MARK: Column Label
 body: Center(
   child: Column(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -55,33 +86,6 @@ body: Center(
   ),
 ),
 */
-class TestStatelessWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "My TestStatelessWidget",
-      home: MyHomePage(),
-      theme: ThemeData(primarySwatch: Colors.red),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int number = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("First App"),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
