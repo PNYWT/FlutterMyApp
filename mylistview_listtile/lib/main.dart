@@ -39,7 +39,7 @@ class _MyListState extends State<MyList> {
       ),
       body: Center(
         child: ListView(
-          children: getData(100),
+          children: getData(20),
         ),
       ),
     );
@@ -52,9 +52,27 @@ class _MyListState extends State<MyList> {
     List<Widget> data = [];
 
     for (var i = 1; i <= count; i++) {
-      var listRow = Text(
-        "Data return ${i}",
-        style: TextStyle(color: Colors.blue, fontSize: 20),
+      var colorTitleBG = Colors.white.withOpacity(0);
+      var colorSubtitleBG = Colors.white.withOpacity(0);
+      if (i % 2 == 0) {
+        colorTitleBG = Colors.red;
+      } else {
+        colorSubtitleBG = Colors.blueAccent;
+      }
+
+      var listRow = ListTile(
+        title: Text(
+          "Main title: $i",
+          style: TextStyle(
+              fontSize: 18, color: Colors.amber, backgroundColor: colorTitleBG),
+        ),
+        subtitle: Text(
+          "Sub title: $i",
+          style: TextStyle(
+              fontSize: 14,
+              color: Colors.amber,
+              backgroundColor: colorSubtitleBG),
+        ),
       );
       data.add(listRow);
     }

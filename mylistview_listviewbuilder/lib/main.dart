@@ -34,31 +34,24 @@ class _MyListState extends State<MyList> {
   Widget build(BuildContext context) {
     //Return UI Start
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Show List"),
-      ),
-      body: Center(
-        child: ListView(
-          children: getData(100),
+        appBar: AppBar(
+          title: Text("Show List"),
         ),
-      ),
-    );
+        //ListViewBuiler เหมาะกับรายการจำนวนมากๆ สามารถระบุจำนวนสิ้นสุดเหมือน List tile ได้
+        body: ListView.builder(
+          itemCount: 15,
+          itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(
+              "Main title: ${index+1}",
+              style: TextStyle(fontSize: 18, color: Colors.blueAccent),
+            ),
+            subtitle: Text(
+              "Sub title: ${index+1}",
+              style: TextStyle(fontSize: 14, color: Colors.amber),
+            ),
+          );
+        }));
   }
   //Return UI End
-
-  //Func getdate
-  List<Widget> getData(int count) {
-    //Create Array Text
-    List<Widget> data = [];
-
-    for (var i = 1; i <= count; i++) {
-      var listRow = Text(
-        "Data return ${i}",
-        style: TextStyle(color: Colors.blue, fontSize: 20),
-      );
-      data.add(listRow);
-    }
-    return data;
-  }
-  //Func getdate End
 }
